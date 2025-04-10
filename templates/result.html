@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center">Prediction Result</h2>
+        <div class="alert alert-info text-center" id="predictionResult"></div>
+        <div class="text-center mt-4">
+            <a href="/" class="btn btn-primary">Check Another News</a>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let params = new URLSearchParams(window.location.search);
+            let prediction = params.get("prediction");
+            document.getElementById("predictionResult").innerText = `Prediction: ${prediction}`;
+        });
+    </script>
+</body>
+</html>
